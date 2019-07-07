@@ -9,6 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/>
     <flow name="projectFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP"/>
+        <logger message="Start Logger" level="INFO" doc:name="Logger"/>
         <set-payload value="#[&quot;Hello World&quot;]" doc:name="Set Payload"/>
         <logger message="End Logger" level="INFO" doc:name="Logger"/>
     </flow>
